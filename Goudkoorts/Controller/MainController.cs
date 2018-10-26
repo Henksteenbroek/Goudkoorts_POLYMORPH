@@ -12,8 +12,8 @@ namespace Goudkoorts.Controller
     {
         public MainController()
         {
-            new Game();
-            new MapCreator();
+            Game game = new Game();
+            new MapCreator(game);
             new InputView();
             new OutputView();
         }

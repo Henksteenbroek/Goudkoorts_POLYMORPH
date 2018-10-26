@@ -11,9 +11,27 @@ namespace Goudkoorts.Model.Fields
         public Field Next { get; set; }
         public Cart Cart { get; set; }
         public Direction Direction { get; set; }
+
+        public Field()
+        {
+        }
+
         public Field(Direction direction)
         {
             Direction = direction;
+            DrawChar = '=';
+        }
+
+        public char DrawChar
+        {
+            get
+            {
+                if (Cart == null)
+                    return DrawChar;
+
+                return Cart.DrawChar;
+            }
+            set { DrawChar = value; }
         }
 
         public void placeCart(Cart cart)
@@ -26,6 +44,6 @@ namespace Goudkoorts.Model.Fields
             Cart = null;
         }
 
-        
+
     }
 }

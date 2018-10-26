@@ -11,6 +11,13 @@ namespace Goudkoorts.Model
         int Capacity = 8;
         int Cargo { get; set; }
         bool IsDocked { get; set; }
+        public char DrawChar { get; set; }
+       
+        public Ship() 
+        {
+            DrawChar = 'S';
+        }
+
         bool IsFull
         {
             get
@@ -19,11 +26,6 @@ namespace Goudkoorts.Model
                     return true;
                 return false;
             }
-        } 
-   
-        public Ship() 
-        {
-
         }
 
     }

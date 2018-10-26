@@ -11,22 +11,26 @@ namespace Goudkoorts.Model.Fields
         public int State { get; set; }
         public Field NextUp;
         public Field NextDown;
+
         public Split()
-        {
+        { 
+            Next = NextUp;
+            DrawChar = '╩';
             State = 0;
-            setState();
         }
 
         private void setState()
         {
-            if(State == 0)
+            if(State == 1)
             {
                 Next = NextUp;
-                State = 1;
+                DrawChar = '╩';
+                State = 0;
             } else
             {
                 Next = NextDown;
-                State = 0;
+                DrawChar = '╦';
+                State = 1;
             }
         }
     }

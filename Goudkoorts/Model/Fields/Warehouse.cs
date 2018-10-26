@@ -8,9 +8,10 @@ namespace Goudkoorts.Model.Fields
 {
     public class Warehouse : Field
     {
+
         public Warehouse(Direction direction) : base(direction)
         {
-
+            DrawChar = '⌂';
         }
 
         public void generateCart()

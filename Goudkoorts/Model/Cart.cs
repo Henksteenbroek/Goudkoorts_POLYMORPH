@@ -10,10 +10,11 @@ namespace Goudkoorts.Model
     public class Cart
     {
         public Field Location { get; set; }
+        public char DrawChar { get; set; }
         public int Cargo = 1;
         public Cart()
         {
-
+            DrawChar = 'O';
         }
     }
 }
