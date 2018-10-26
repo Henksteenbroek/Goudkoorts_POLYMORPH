@@ -9,6 +9,8 @@ namespace Goudkoorts.Model.Fields
     public class Field
     {
         public Field Next { get; set; }
+        public Field NextUp { get; set; }
+        public Field NextDown { get; set; }
         public Cart Cart { get; set; }
         public Direction Direction { get; set; }
         private char drawChar;

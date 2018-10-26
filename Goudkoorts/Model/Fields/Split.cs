@@ -9,8 +9,6 @@ namespace Goudkoorts.Model.Fields
     public class Split : Field
     {
         public int State { get; set; }
-        public Field NextUp;
-        public Field NextDown;
 
         public Split(Direction direction) : base(direction)
         { 

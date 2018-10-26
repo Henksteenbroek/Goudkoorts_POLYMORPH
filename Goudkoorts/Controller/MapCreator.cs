@@ -39,18 +39,24 @@ namespace Goudkoorts.Controller
                     switch (MapArray[x, y].Direction)
                     {
                         case Direction.UP:
-
+                            MapArray[x, y].Next = MapArray[x, y - 1];
                             break;
                         case Direction.DOWN:
+                            MapArray[x, y].Next = MapArray[x, y + 1];
                             break;
                         case Direction.LEFT:
+                            MapArray[x, y].Next = MapArray[x-1, y];
                             break;
                         case Direction.RIGHT:
+                            MapArray[x, y].Next = MapArray[x + 1, y];
                             break;
                         case Direction.SPLIT:
+                            MapArray[x, y].NextUp = MapArray[x - 1, y];
+                            MapArray[x, y].NextDown = MapArray[x - 1, y];
+                            MapArray[x, y].Next = MapArray[x, y].NextUp;
                             break;
                     }
-                    //MapArray[x, y] =
+                    
                 }
             }
         }
