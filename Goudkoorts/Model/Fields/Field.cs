@@ -22,7 +22,7 @@ namespace Goudkoorts.Model.Fields
         public Field(Direction direction)
         {
             Direction = direction;
-            DrawChar = '=';
+            DrawChar = '═';
         }
 
         public virtual char DrawChar

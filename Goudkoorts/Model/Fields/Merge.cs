@@ -12,7 +12,7 @@ namespace Goudkoorts.Model.Fields
 
         public Merge(Direction direction) : base(direction)
         {
-            DrawChar = '╩';
+            DrawChar = '╚';
             State = 0;
         }
 
@@ -20,12 +20,12 @@ namespace Goudkoorts.Model.Fields
         {
             if (State == 1)
             {
-                DrawChar = '╩';
+                DrawChar = '╚';
                 State = 0;
             }
             else
             {
-                DrawChar = '╦';
+                DrawChar = '╔';
                 State = 1;
             }
         }

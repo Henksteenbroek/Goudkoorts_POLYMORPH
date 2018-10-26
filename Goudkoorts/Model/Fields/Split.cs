@@ -13,7 +13,7 @@ namespace Goudkoorts.Model.Fields
         public Split(Direction direction) : base(direction)
         { 
             Next = NextUp;
-            DrawChar = '╩';
+            DrawChar = '╝';
             State = 0;
         }
 
@@ -22,12 +22,12 @@ namespace Goudkoorts.Model.Fields
             if(State == 1)
             {
                 Next = NextUp;
-                DrawChar = '╩';
+                DrawChar = '╝';
                 State = 0;
             } else
             {
                 Next = NextDown;
-                DrawChar = '╦';
+                DrawChar = '╗';
                 State = 1;
             }
         }
