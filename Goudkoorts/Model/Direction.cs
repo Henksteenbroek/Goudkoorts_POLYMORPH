@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Goudkoorts.Controller
+namespace Goudkoorts.Model
 {
-    public class ViewController
+    public enum Direction
     {
-
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT,
     }
 }

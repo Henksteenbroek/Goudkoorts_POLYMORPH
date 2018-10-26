@@ -47,6 +47,7 @@
     <Compile Include="Controller\MapCreator.cs" />
     <Compile Include="Controller\ViewController.cs" />
     <Compile Include="Model\Cart.cs" />
+    <Compile Include="Model\Direction.cs" />
     <Compile Include="Model\Fields\Dock.cs" />
     <Compile Include="Model\Fields\Field.cs" />
     <Compile Include="Model\Fields\Merge.cs" />

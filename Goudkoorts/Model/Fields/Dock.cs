@@ -18,7 +18,7 @@ namespace Goudkoorts.Model.Fields
             }
         }
 
-        public Dock()
+        public Dock(Direction direction) : base(direction)
         {
 
         }

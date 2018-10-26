@@ -9,9 +9,10 @@ namespace Goudkoorts.Model
 {
     public class Game
     {
-        Warehouse WarehouseA { get; set; }
-        Warehouse WarehouseB { get; set; }
-        Warehouse WarehouseC { get; set; }
+        public Field[,] MapArray { get; set; }
+        public Warehouse WarehouseA { get; set; }
+        public Warehouse WarehouseB { get; set; }
+        public Warehouse WarehouseC { get; set; }
         
         public Game()
         {

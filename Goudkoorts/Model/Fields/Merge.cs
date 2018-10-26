@@ -8,7 +8,7 @@ namespace Goudkoorts.Model.Fields
 {
     public class Merge : Field
     {
-        public Merge()
+        public Merge(Direction direction) : base(direction)
         {
 
         }

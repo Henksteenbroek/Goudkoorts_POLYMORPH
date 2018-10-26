@@ -10,9 +10,10 @@ namespace Goudkoorts.Model.Fields
     {
         public Field Next { get; set; }
         public Cart Cart { get; set; }
-        public Field()
+        public Direction Direction { get; set; }
+        public Field(Direction direction)
         {
-            Next = new Warehouse();
+            Direction = direction;
         }
 
         public void placeCart(Cart cart)
@@ -24,5 +25,7 @@ namespace Goudkoorts.Model.Fields
         {
             Cart = null;
         }
+
+        
     }
 }

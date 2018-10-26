@@ -8,7 +8,7 @@ namespace Goudkoorts.Model.Fields
 {
     public class Warehouse : Field
     {
-        public Warehouse()
+        public Warehouse(Direction direction) : base(direction)
         {
 
         }
