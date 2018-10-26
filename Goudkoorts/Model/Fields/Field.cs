@@ -11,6 +11,12 @@ namespace Goudkoorts.Model.Fields
         public Field Next { get; set; }
         public Cart Cart { get; set; }
         public Direction Direction { get; set; }
+
+        public Field()
+        {
+
+        }
+
         public Field(Direction direction)
         {
             Direction = direction;

@@ -11,7 +11,7 @@ namespace Goudkoorts.Model.Fields
         public int State { get; set; }
         public Field NextUp;
         public Field NextDown;
-        public Split()
+        public Split(Direction direction) : base(direction)
         {
             State = 0;
             setState();
