@@ -11,7 +11,7 @@ namespace Goudkoorts.Model.Fields
 
         public Warehouse(Direction direction) : base(direction)
         {
-            DrawChar = '⌂';
+            DrawChar = 'W';
         }
 
         public void generateCart()

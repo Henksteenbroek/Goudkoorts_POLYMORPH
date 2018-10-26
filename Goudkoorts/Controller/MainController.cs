@@ -10,12 +10,13 @@ namespace Goudkoorts.Controller
 {
     public class MainController
     {
+        private Game game;
         public MainController()
         {
-            Game game = new Game();
+            game = new Game();
             new MapCreator(game);
             new InputView();
-            new OutputView();
+            new OutputView(game);
         }
     }
 }

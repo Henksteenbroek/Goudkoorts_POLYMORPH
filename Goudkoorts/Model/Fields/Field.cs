@@ -11,6 +11,7 @@ namespace Goudkoorts.Model.Fields
         public Field Next { get; set; }
         public Cart Cart { get; set; }
         public Direction Direction { get; set; }
+        private char drawChar;
 
         public Field()
         {
@@ -22,16 +23,16 @@ namespace Goudkoorts.Model.Fields
             DrawChar = '=';
         }
 
-        public char DrawChar
+        public virtual char DrawChar
         {
             get
             {
                 if (Cart == null)
-                    return DrawChar;
+                    return drawChar;
 
                 return Cart.DrawChar;
             }
-            set { DrawChar = value; }
+            set { this.drawChar = value; }
         }
 
         public void placeCart(Cart cart)

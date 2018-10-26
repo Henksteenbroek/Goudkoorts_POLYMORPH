@@ -53,6 +53,7 @@
     <Compile Include="Model\Fields\Merge.cs" />
     <Compile Include="Model\Fields\Split.cs" />
     <Compile Include="Model\Fields\Warehouse.cs" />
+    <Compile Include="Model\Fields\Water.cs" />
     <Compile Include="Model\Fields\Yard.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Controller\Program.cs" />

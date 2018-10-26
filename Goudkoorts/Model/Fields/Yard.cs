@@ -10,7 +10,7 @@ namespace Goudkoorts.Model.Fields
     {
         public Yard(Direction direction) : base(direction)
         {
-
+            DrawChar = '-';
         }
     }
 }

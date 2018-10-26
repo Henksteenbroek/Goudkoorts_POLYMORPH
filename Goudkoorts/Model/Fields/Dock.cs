@@ -9,7 +9,8 @@ namespace Goudkoorts.Model.Fields
     public class Dock : Field
     {
         public Ship DockedShip { get; set; }
-        public bool HasShip {
+        public bool HasShip
+        {
             get
             {
                 if (DockedShip != null)
@@ -20,7 +21,7 @@ namespace Goudkoorts.Model.Fields
 
         public Dock(Direction direction) : base(direction)
         {
-
+            DrawChar = 'D';
         }
     }
 }

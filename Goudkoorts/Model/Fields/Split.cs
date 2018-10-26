@@ -12,7 +12,7 @@ namespace Goudkoorts.Model.Fields
         public Field NextUp;
         public Field NextDown;
 
-        public Split()
+        public Split(Direction direction) : base(direction)
         { 
             Next = NextUp;
             DrawChar = '╩';

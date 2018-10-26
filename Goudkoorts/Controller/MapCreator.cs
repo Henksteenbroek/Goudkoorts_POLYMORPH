@@ -12,6 +12,7 @@ namespace Goudkoorts.Controller
         {
             this.game = game;
             MapArray = CreateArray();
+            game.MapArray = MapArray;
         }
 
         public Field[,] CreateArray()
