@@ -12,5 +12,6 @@ namespace Goudkoorts.Model
         DOWN,
         LEFT,
         RIGHT,
+        SPLIT,
     }
 }
