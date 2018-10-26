@@ -19,18 +19,19 @@ namespace Goudkoorts.View
 
         public void PrintMap()
         {
-            for (int y = 0; y < game.MapArray.GetLength(0); y++)
+            for (int x = 0; x < game.MapArray.GetLength(0); x++)
             {
-                for (int x = 0; x < game.MapArray.GetLength(1); x++)
+                for (int y = 0; y < game.MapArray.GetLength(1); y++)
                 {
-                    if (game.MapArray[y, x] == null)
+                    if (game.MapArray[x, y] == null)
                     {
                         Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write(game.MapArray[y, x].DrawChar);
+                        Console.Write(game.MapArray[x, y].DrawChar);
                     }
+                    Console.Write(" ");
                 }
                 Console.WriteLine();
             }
