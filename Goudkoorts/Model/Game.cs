@@ -13,15 +13,23 @@ namespace Goudkoorts.Model
         public Warehouse WarehouseA { get; set; }
         public Warehouse WarehouseB { get; set; }
         public Warehouse WarehouseC { get; set; }
+        Random random;
         
         public Game()
         {
+            random = new Random();
+        }
 
+        public void PlayGameTick()
+        {
+            if(random.Next(1, 5) == 1)
+            {
+                generateCart();
+            }
         }
 
         public void generateCart()
         {
-            Random random = new Random();
             switch (random.Next(1, 4))
             {
                 case 1:

@@ -13,6 +13,7 @@ namespace Goudkoorts.Controller
     {
         private Game game;
         private Thread CountDownThread;
+        private int CountdownSeconds = 2;
 
         public MainController()
         {
@@ -26,7 +27,7 @@ namespace Goudkoorts.Controller
 
         private void CountDown()
         {
-            int i = 5;
+            int i = CountdownSeconds;
             while (true)
             {
                 Console.WriteLine(i);
@@ -34,7 +35,8 @@ namespace Goudkoorts.Controller
                 Thread.Sleep(1000);
                 if(i == 0)
                 {
-                    i = 5;
+                    i = CountdownSeconds;
+                    game.PlayGameTick();
                 }
             }
         }
