@@ -14,11 +14,11 @@ namespace Goudkoorts.Model.Fields
         { 
             Next = NextUp;
             DrawChar = '╝';
-            State = 0;
+            State = 1;
             setState();
         }
 
-        private void setState()
+        public void setState()
         {
             if(State == 1)
             {

@@ -17,6 +17,9 @@ namespace Goudkoorts.Model
         public Dock Dock { get; set; }
         public Water ShipSpawner { get; set; }
         public List<GameObject> GameObjects{ get; set; }
+        public Split SplitA { get; internal set; }
+        public Split SplitB { get; internal set; }
+
         Random random;
         
         public Game()

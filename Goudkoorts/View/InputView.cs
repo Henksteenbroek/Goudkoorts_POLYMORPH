@@ -12,7 +12,7 @@ namespace Goudkoorts.View
         ConsoleKeyInfo key;
         int returnValue;
 
-        public InputView()
+        public InputView(Game game)
         {
 
         }
@@ -42,23 +42,21 @@ namespace Goudkoorts.View
             this.key = key;
             switch (key.Key)
             {
-                case ConsoleKey.UpArrow:
-                    returnValue = (int)Direction.UP;
+                case ConsoleKey.D1:
+                    Console.Write("you pressed 1");
+                    returnValue = 1;
                     break;
-                case ConsoleKey.DownArrow:
-                    returnValue = (int)Direction.DOWN;
+                case ConsoleKey.D2:
+                    returnValue = 2;
                     break;
-                case ConsoleKey.LeftArrow:
-                    returnValue = (int)Direction.LEFT;
+                case ConsoleKey.D3:
+                    returnValue = 3;
                     break;
-                case ConsoleKey.RightArrow:
-                    returnValue = (int)Direction.RIGHT;
+                case ConsoleKey.D4:
+                    returnValue = 4;
                     break;
-                case ConsoleKey.R:
-                    returnValue = -1;
-                    break;
-                case ConsoleKey.S:
-                    returnValue = -2;
+                case ConsoleKey.D5:
+                    returnValue = 5;
                     break;
             }
             return returnValue;

@@ -13,14 +13,16 @@ namespace Goudkoorts.Controller
     {
         private Game game;
         private OutputView outputView;
+        private InputView inputView;
         private Thread CountDownThread;
+        private Thread SwitchThread;
         private int CountdownSeconds = 1;
 
         public MainController()
         {
             game = new Game();
             new MapCreator(game);
-            new InputView();
+            inputView = new InputView(game);
             outputView = new OutputView(game);
             CountDownThread = new Thread(CountDown);
             CountDownThread.Start();
@@ -32,6 +34,7 @@ namespace Goudkoorts.Controller
             int i = CountdownSeconds;
             while (true)
             {
+
                 outputView.PrintMap(i);
                 i--;
                 Thread.Sleep(500);
