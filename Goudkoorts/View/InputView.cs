@@ -25,7 +25,7 @@ namespace Goudkoorts.View
             while (!validInputGiven)
             {
                 key = Console.ReadKey();
-                if (key.Key != ConsoleKey.UpArrow && key.Key != ConsoleKey.DownArrow && key.Key != ConsoleKey.LeftArrow && key.Key != ConsoleKey.RightArrow && key.Key != ConsoleKey.S && key.Key != ConsoleKey.R)
+                if (key.Key != ConsoleKey.D1 && key.Key != ConsoleKey.D2 && key.Key != ConsoleKey.D3 && key.Key != ConsoleKey.D4 && key.Key != ConsoleKey.D5)
                 {
                     Console.WriteLine(" is geen geldig teken, gebruik de pijltestoetsen of 's' of 'r'");
                 }

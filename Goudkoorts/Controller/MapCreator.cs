@@ -17,16 +17,23 @@ namespace Goudkoorts.Controller
 
         public Field[,] CreateArray()
         {
+            Warehouse WarehouseA = new Warehouse(Direction.RIGHT);
+            game.WarehouseA = WarehouseA;
+            Warehouse WarehouseB = new Warehouse(Direction.RIGHT);
+            game.WarehouseB = WarehouseB;
+            Warehouse WarehouseC = new Warehouse(Direction.RIGHT);
+            game.WarehouseC = WarehouseC;
+
             return new Field[,]
             {
                 {new Water(Direction.LEFT)      , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT)},
                 {new Field(Direction.LEFT)      , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Dock(Direction.LEFT)  , new Field(Direction.LEFT) , new Field(Direction.LEFT)},
                 {null                           , null                      , null                      , null                      , null                      , null                      , null                      , null                      , null                      , null                      , null                      , new Field(Direction.UP)},
-                {new Warehouse(Direction.RIGHT) , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.UP) },
+                {WarehouseA                     , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.UP) },
                 {null                           , null                      , null                      , new Merge(Direction.RIGHT), new Field(Direction.RIGHT), new Split(Direction.SPLIT), null                      , null                      , null                      , new Merge(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.UP) },
-                {new Warehouse(Direction.RIGHT) , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.UP)   , null                      , new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.RIGHT), new Field(Direction.UP)   , null                      , null },
+                {WarehouseB                     , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.UP)   , null                      , new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.RIGHT), new Field(Direction.UP)   , null                      , null },
                 {null                           , null                      , null                      , null                      , null                      , null                      , new Merge(Direction.RIGHT), new Field(Direction.RIGHT), new Split(Direction.SPLIT), null                      , null                      , null },
-                {new Warehouse(Direction.RIGHT) , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.UP)   , null                      , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) },
+                {WarehouseC                     , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.UP)   , null                      , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) },
                 {null                           , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) }
             };
         }
