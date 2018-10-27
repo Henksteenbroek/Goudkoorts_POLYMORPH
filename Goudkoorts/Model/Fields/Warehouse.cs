@@ -14,9 +14,12 @@ namespace Goudkoorts.Model.Fields
             DrawChar = 'W';
         }
 
-        public void generateCart()
+        public Cart generateCart()
         {
+            Cart cart = new Cart();
+            cart.Location = Next;
             Next.placeObj(new Cart());
+            return cart;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Goudkoorts.Controller
         private Game game;
         private OutputView outputView;
         private Thread CountDownThread;
-        private int CountdownSeconds = 2;
+        private int CountdownSeconds = 1;
 
         public MainController()
         {
@@ -30,8 +30,8 @@ namespace Goudkoorts.Controller
         private void CountDown()
         {
             int i = CountdownSeconds;
-            game.WarehouseA.Next.placeObj(game.Cart);
-            game.Cart.Location = game.WarehouseA.Next;
+            //game.WarehouseA.Next.placeObj(game.Cart);
+            //game.Cart.Location = game.WarehouseA.Next;
             while (true)
             {
                 outputView.PrintMap(i);
