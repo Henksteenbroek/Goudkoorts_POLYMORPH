@@ -24,5 +24,10 @@ namespace Goudkoorts.Model.GameObjects
             Location.removeObj();
             Location = Location.Next;
         }
+        
+        public virtual void unloadCargo()
+        {
+
+        }
     }
 }

@@ -12,8 +12,14 @@ namespace Goudkoorts.Model
     {
         public Cart()
         {
-            DrawChar = 'O';
+            DrawChar = 'Ø';
             Cargo = 1;
+        }
+
+        public override void unloadCargo()
+        {
+            DrawChar = 'O';
+            Cargo = 0; 
         }
     }
 }

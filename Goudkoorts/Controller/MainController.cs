@@ -14,7 +14,7 @@ namespace Goudkoorts.Controller
         private Game game;
         private OutputView outputView;
         private Thread CountDownThread;
-        private int CountdownSeconds = 2;
+        private int CountdownSeconds = 1;
 
         public MainController()
         {
@@ -36,7 +36,7 @@ namespace Goudkoorts.Controller
             {
                 outputView.PrintMap(i);
                 i--;
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
                 if (i == 0)
                 {
                     i = CountdownSeconds;

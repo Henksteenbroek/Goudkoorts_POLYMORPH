@@ -23,5 +23,10 @@ namespace Goudkoorts.Model.Fields
         {
             DrawChar = 'D';
         }
+
+        public void unloadCart()
+        {
+            Obj.unloadCargo();
+        }
     }
 }
