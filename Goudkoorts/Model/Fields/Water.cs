@@ -9,7 +9,7 @@ namespace Goudkoorts.Model.Fields
 {
     public class Water : Field
     { 
-        public Water()
+        public Water(Direction direction) : base(direction)
         {
             DrawChar = '~';
         }
