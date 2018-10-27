@@ -10,7 +10,6 @@ namespace Goudkoorts.Model
 {
     public class Cart : GameObject
     {
-        public Field Location { get; set; }
         public int Cargo = 1;
         public Cart()
         {

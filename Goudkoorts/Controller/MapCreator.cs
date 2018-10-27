@@ -17,6 +17,8 @@ namespace Goudkoorts.Controller
 
         public Field[,] CreateArray()
         {
+            Field[,] temp;
+            
             Warehouse WarehouseA = new Warehouse(Direction.RIGHT);
             game.WarehouseA = WarehouseA;
             Warehouse WarehouseB = new Warehouse(Direction.RIGHT);
@@ -24,7 +26,7 @@ namespace Goudkoorts.Controller
             Warehouse WarehouseC = new Warehouse(Direction.RIGHT);
             game.WarehouseC = WarehouseC;
 
-            return new Field[,]
+            temp = new Field[,]
             {
                 {new Water(Direction.LEFT)      , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT)},
                 {new Field(Direction.LEFT)      , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Dock(Direction.LEFT)  , new Field(Direction.LEFT) , new Field(Direction.LEFT)},
@@ -36,32 +38,35 @@ namespace Goudkoorts.Controller
                 {WarehouseC                     , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.UP)   , null                      , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) },
                 {null                           , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Yard(Direction.LEFT)  , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) }
             };
+
+            CreateLinks(temp);
+            return temp;
         }
 
-        public void CreateLinks()
+        public void CreateLinks(Field[,] temp)
         {
-            for (int x = 0; x < MapArray.GetLength(0); x++)
+            for (int x = 0; x < temp.GetLength(0); x++)
             {
-                for (int y = 0; x < MapArray.GetLength(1); y++)
+                for (int y = 0; x < temp.GetLength(1); y++)
                 {
-                    switch (MapArray[x, y].Direction)
+                    switch (temp[x, y].Direction)
                     {
                         case Direction.UP:
-                            MapArray[x, y].Next = MapArray[x, y - 1];
+                            temp[x, y].Next = temp[x, y - 1];
                             break;
                         case Direction.DOWN:
-                            MapArray[x, y].Next = MapArray[x, y + 1];
+                            temp[x, y].Next = temp[x, y + 1];
                             break;
                         case Direction.LEFT:
-                            MapArray[x, y].Next = MapArray[x-1, y];
+                            temp[x, y].Next = temp[x-1, y];
                             break;
                         case Direction.RIGHT:
-                            MapArray[x, y].Next = MapArray[x + 1, y];
+                            temp[x, y].Next = temp[x + 1, y];
                             break;
                         case Direction.SPLIT:
-                            MapArray[x, y].NextUp = MapArray[x - 1, y];
-                            MapArray[x, y].NextDown = MapArray[x - 1, y];
-                            MapArray[x, y].Next = MapArray[x, y].NextUp;
+                            temp[x, y].NextUp = temp[x - 1, y];
+                            temp[x, y].NextDown = temp[x - 1, y];
+                            temp[x, y].Next = temp[x, y].NextUp;
                             break;
                     }
                     
