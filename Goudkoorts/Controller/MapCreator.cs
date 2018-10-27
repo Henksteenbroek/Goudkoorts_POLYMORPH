@@ -55,32 +55,32 @@ namespace Goudkoorts.Controller
                         switch (temp[x, y].Direction)
                         {
                             case Direction.UP:
-                                if (y != 0)
+                                if (x != 0)
                                 {
-                                    temp[x, y].Next = temp[x, y - 1];
+                                    temp[x, y].Next = temp[x-1, y];
                                 }
                                 break;
                             case Direction.DOWN:
-                                if (y + 1 < temp.GetLength(1))
+                                if (x + 1 < temp.GetLength(1))
                                 {
-                                    temp[x, y].Next = temp[x, y + 1];
+                                    temp[x, y].Next = temp[x+1, y];
                                 }
                                 break;
                             case Direction.LEFT:
-                                if (x != 0)
+                                if (y != 0)
                                 {
-                                    temp[x, y].Next = temp[x - 1, y];
+                                    temp[x, y].Next = temp[x, y-1];
                                 }
                                 break;
                             case Direction.RIGHT:
-                                if (x + 1 < temp.GetLength(0))
+                                if (y + 1 < temp.GetLength(0))
                                 {
-                                    temp[x, y].Next = temp[x + 1, y];
+                                    temp[x, y].Next = temp[x, y+1];
                                 }
                                 break;
                             case Direction.SPLIT:
-                                temp[x, y].NextUp = temp[x - 1, y];
-                                temp[x, y].NextDown = temp[x - 1, y];
+                                temp[x, y].NextUp = temp[x, y-1];
+                                temp[x, y].NextDown = temp[x, y-1];
                                 temp[x, y].Next = temp[x, y].NextUp;
                                 break;
                         }

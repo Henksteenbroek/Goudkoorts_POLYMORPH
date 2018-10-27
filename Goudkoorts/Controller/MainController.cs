@@ -25,6 +25,7 @@ namespace Goudkoorts.Controller
             outputView.PrintMap();
             CountDownThread = new Thread(CountDown);
             CountDownThread.Start();
+            Console.ReadLine();
         }
 
         private void CountDown()
