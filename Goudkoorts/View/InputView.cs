@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Goudkoorts.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,16 +43,16 @@ namespace Goudkoorts.View
             switch (key.Key)
             {
                 case ConsoleKey.UpArrow:
-                    returnValue = (int)Direction.Up;
+                    returnValue = (int)Direction.UP;
                     break;
                 case ConsoleKey.DownArrow:
-                    returnValue = (int)Direction.Down;
+                    returnValue = (int)Direction.DOWN;
                     break;
                 case ConsoleKey.LeftArrow:
-                    returnValue = (int)Direction.Left;
+                    returnValue = (int)Direction.LEFT;
                     break;
                 case ConsoleKey.RightArrow:
-                    returnValue = (int)Direction.Right;
+                    returnValue = (int)Direction.RIGHT;
                     break;
                 case ConsoleKey.R:
                     returnValue = -1;
