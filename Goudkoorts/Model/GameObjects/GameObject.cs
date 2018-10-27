@@ -11,6 +11,7 @@ namespace Goudkoorts.Model.GameObjects
     {
         public char DrawChar { get; set; }
         public Field Location { get; set; }
+        public int Cargo { get; set; }
 
         public GameObject()
         {
