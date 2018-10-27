@@ -26,11 +26,7 @@ namespace Goudkoorts.Controller
 
         private void test()
         {
-            int i = 0;
-            while (true)
-            {
-                Console.WriteLine(i++);
-            }
+           
         }
     }
 }

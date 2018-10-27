@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Goudkoorts.Model.GameObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,19 @@ namespace Goudkoorts.Model.Fields
         public Field Next { get; set; }
         public Field NextUp { get; set; }
         public Field NextDown { get; set; }
-        public Cart Cart { get; set; }
+        public GameObject Obj { get; set; }
         public Direction Direction { get; set; }
         private char drawChar;
-
-        public Field()
+        public char DrawChar
         {
+            get
+            {
+                if (Obj == null)
+                    return drawChar;
+
+                return Obj.DrawChar;
+            }
+            set { drawChar = value; }
         }
 
         public Field(Direction direction)
@@ -25,26 +33,15 @@ namespace Goudkoorts.Model.Fields
             DrawChar = '═';
         }
 
-        public virtual char DrawChar
+       
+        public void placeObj(GameObject obj)
         {
-            get
-            {
-                if (Cart == null)
-                    return drawChar;
-
-                return Cart.DrawChar;
-            }
-            set { this.drawChar = value; }
+            Obj = obj;
         }
 
-        public void placeCart(Cart cart)
+        public void removeObj()
         {
-            Cart = cart;
-        }
-
-        public void removeCart()
-        {
-            Cart = null;
+            Obj = null;
         }
 
 

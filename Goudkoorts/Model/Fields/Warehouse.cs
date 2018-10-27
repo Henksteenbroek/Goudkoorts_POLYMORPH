@@ -16,7 +16,7 @@ namespace Goudkoorts.Model.Fields
 
         public void generateCart()
         {
-            Next.placeCart(new Cart());
+            Next.placeObj(new Cart());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Goudkoorts.Model.GameObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Goudkoorts.Model
 { 
-    public class Ship
+    public class Ship : GameObject
     {
-        int Capacity = 8;
-        int Cargo { get; set; }
-        bool IsDocked { get; set; }
-        public char DrawChar { get; set; }
+        public int Capacity = 8;
+        public int Cargo { get; set; }
+        public bool IsDocked { get; set; }
+        
        
         public Ship() 
         {
