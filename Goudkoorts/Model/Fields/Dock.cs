@@ -26,7 +26,10 @@ namespace Goudkoorts.Model.Fields
 
         public void unloadCart()
         {
-            Obj.unloadCargo();
+            if(Obj != null)
+            {
+                Obj.unloadCargo();
+            }
         }
     }
 }
