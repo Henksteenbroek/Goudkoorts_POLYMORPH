@@ -61,7 +61,7 @@ namespace Goudkoorts.Controller
                                 }
                                 break;
                             case Direction.DOWN:
-                                if (x + 1 < temp.GetLength(1))
+                                if (x + 1 < temp.GetLength(0))
                                 {
                                     temp[x, y].Next = temp[x+1, y];
                                 }
@@ -73,14 +73,14 @@ namespace Goudkoorts.Controller
                                 }
                                 break;
                             case Direction.RIGHT:
-                                if (y + 1 < temp.GetLength(0))
+                                if (y + 1 < temp.GetLength(1))
                                 {
                                     temp[x, y].Next = temp[x, y+1];
                                 }
                                 break;
                             case Direction.SPLIT:
-                                temp[x, y].NextUp = temp[x, y-1];
-                                temp[x, y].NextDown = temp[x, y-1];
+                                temp[x, y].NextUp = temp[x-1, y];
+                                temp[x, y].NextDown = temp[x+1, y];
                                 temp[x, y].Next = temp[x, y].NextUp;
                                 break;
                         }
