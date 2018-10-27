@@ -17,5 +17,12 @@ namespace Goudkoorts.Model.GameObjects
         {
 
         }
+
+        public void move()
+        {
+            Location.Next.placeObj(this);
+            Location.removeObj();
+            Location = Location.Next;
+        }
     }
 }
