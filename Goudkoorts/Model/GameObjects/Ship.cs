@@ -11,14 +11,7 @@ namespace Goudkoorts.Model
     {
         public int Capacity = 8;
         public bool IsDocked { get; set; }
-        
-       
-        public Ship() 
-        {
-            DrawChar = 'S';
-        }
-
-        bool IsFull
+        public bool IsFull
         {
             get
             {
@@ -27,6 +20,10 @@ namespace Goudkoorts.Model
                 return false;
             }
         }
-
+        public Ship() 
+        {
+            DrawChar = 'S';
+        }
+       
     }
 }

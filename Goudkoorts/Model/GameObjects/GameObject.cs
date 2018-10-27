@@ -18,7 +18,7 @@ namespace Goudkoorts.Model.GameObjects
 
         }
 
-        public void move()
+        public virtual void move()
         {
             if (Location.Next == null)
             {

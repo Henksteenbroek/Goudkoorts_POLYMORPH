@@ -18,7 +18,7 @@ namespace Goudkoorts.Model.Fields
         {
             Cart cart = new Cart();
             cart.Location = Next;
-            Next.placeObj(new Cart());
+            Next.placeObj(cart);
             return cart;
         }
     }

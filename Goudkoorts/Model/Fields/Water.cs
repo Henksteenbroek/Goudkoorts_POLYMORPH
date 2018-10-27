@@ -9,9 +9,18 @@ namespace Goudkoorts.Model.Fields
 {
     public class Water : Field
     { 
+
         public Water(Direction direction) : base(direction)
         {
             DrawChar = '~';
+        }
+
+        public Ship generateShip()
+        {
+            Ship ship = new Ship();
+            ship.Location = this;
+            placeObj(ship);
+            return ship;
         }
 
     }

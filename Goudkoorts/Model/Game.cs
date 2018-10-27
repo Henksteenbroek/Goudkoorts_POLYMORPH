@@ -1,4 +1,5 @@
 ﻿using Goudkoorts.Model.Fields;
+using Goudkoorts.Model.GameObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,32 @@ namespace Goudkoorts.Model
         public Warehouse WarehouseA { get; set; }
         public Warehouse WarehouseB { get; set; }
         public Warehouse WarehouseC { get; set; }
-        public List<Cart> Carts { get; set; }
+        public Dock Dock { get; set; }
+        public Water ShipSpawner { get; set; }
+        public List<GameObject> GameObjects{ get; set; }
         Random random;
         
         public Game()
         {
-            Carts = new List<Cart>();
+            GameObjects = new List<GameObject>();
             random = new Random();
         }
 
         public void playGameTick()
         {
-            foreach(var item in Carts)
+            Dock.unloadCart();
+            
+            foreach(var item in GameObjects)
             {
                 item.move();
             }
             if(random.Next(1, 5) == 1)
             {
                 generateCart();
+            }
+            if (random.Next(1, 20) == 1)
+            {
+                GameObjects.Add(ShipSpawner.generateShip());
             }
         }
 
@@ -39,15 +48,16 @@ namespace Goudkoorts.Model
             switch (random.Next(1, 4))
             {
                 case 1:
-                    Carts.Add(WarehouseA.generateCart());
+                    GameObjects.Add(WarehouseA.generateCart());
                     break;
                 case 2:
-                    Carts.Add(WarehouseB.generateCart());
+                    GameObjects.Add(WarehouseB.generateCart());
                     break;
                 case 3:
-                    Carts.Add(WarehouseC.generateCart());
+                    GameObjects.Add(WarehouseC.generateCart());
                     break;
             }
         }
+
     }
 }

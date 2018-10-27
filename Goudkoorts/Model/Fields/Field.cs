@@ -12,6 +12,9 @@ namespace Goudkoorts.Model.Fields
         public Field Next { get; set; }
         public Field NextUp { get; set; }
         public Field NextDown { get; set; }
+        public Field Previous { get; set; }
+        public Field PreviousUp { get; set; }
+        public Field PreviousDown { get; set; }
         public GameObject Obj { get; set; }
         public Direction Direction { get; set; }
         private char drawChar;
