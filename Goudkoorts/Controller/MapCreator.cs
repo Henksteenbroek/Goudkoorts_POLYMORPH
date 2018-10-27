@@ -19,6 +19,7 @@ namespace Goudkoorts.Controller
         {
             return new Field[,]
             {
+                {new Water(Direction.LEFT)      , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT) , new Water(Direction.LEFT)},
                 {new Field(Direction.LEFT)      , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Field(Direction.LEFT) , new Dock(Direction.LEFT)  , new Field(Direction.LEFT) , new Field(Direction.LEFT)},
                 {null                           , null                      , null                      , null                      , null                      , null                      , null                      , null                      , null                      , null                      , null                      , new Field(Direction.UP)},
                 {new Warehouse(Direction.RIGHT) , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.RIGHT), new Field(Direction.DOWN) , null                      , new Field(Direction.UP) },
