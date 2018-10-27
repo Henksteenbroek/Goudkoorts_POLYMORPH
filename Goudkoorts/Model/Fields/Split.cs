@@ -15,6 +15,7 @@ namespace Goudkoorts.Model.Fields
             Next = NextUp;
             DrawChar = '╝';
             State = 0;
+            setState();
         }
 
         private void setState()

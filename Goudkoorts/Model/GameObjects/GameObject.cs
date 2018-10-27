@@ -20,11 +20,18 @@ namespace Goudkoorts.Model.GameObjects
 
         public void move()
         {
-            Location.Next.placeObj(this);
-            Location.removeObj();
-            Location = Location.Next;
+            if (Location.Next == null)
+            {
+                Location.removeObj();
+            }
+            else if (Location.Next.Obj == null)
+            {
+                Location.Next.placeObj(this);
+                Location.removeObj();
+                Location = Location.Next;
+            }
         }
-        
+
         public virtual void unloadCargo()
         {
 

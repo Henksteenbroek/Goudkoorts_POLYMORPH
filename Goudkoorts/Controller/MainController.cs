@@ -30,8 +30,6 @@ namespace Goudkoorts.Controller
         private void CountDown()
         {
             int i = CountdownSeconds;
-            //game.WarehouseA.Next.placeObj(game.Cart);
-            //game.Cart.Location = game.WarehouseA.Next;
             while (true)
             {
                 outputView.PrintMap(i);
