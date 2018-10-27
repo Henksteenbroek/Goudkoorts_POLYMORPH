@@ -14,11 +14,11 @@ namespace Goudkoorts.View
         public OutputView(Game game)
         {
             this.game = game;
-            PrintMap();
         }
 
         public void PrintMap()
         {
+            Console.Clear();
             for (int x = 0; x < game.MapArray.GetLength(0); x++)
             {
                 for (int y = 0; y < game.MapArray.GetLength(1); y++)
@@ -35,7 +35,6 @@ namespace Goudkoorts.View
                 }
                 Console.WriteLine();
             }
-            Console.ReadLine();
         }
     }
 }

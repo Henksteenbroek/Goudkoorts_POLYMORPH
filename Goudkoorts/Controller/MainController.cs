@@ -12,6 +12,7 @@ namespace Goudkoorts.Controller
     public class MainController
     {
         private Game game;
+        private OutputView outputView;
         private Thread CountDownThread;
         private int CountdownSeconds = 2;
 
@@ -20,7 +21,8 @@ namespace Goudkoorts.Controller
             game = new Game();
             new MapCreator(game);
             new InputView();
-            new OutputView(game);
+            outputView = new OutputView(game);
+            outputView.PrintMap();
             CountDownThread = new Thread(CountDown);
             CountDownThread.Start();
         }
@@ -30,10 +32,10 @@ namespace Goudkoorts.Controller
             int i = CountdownSeconds;
             while (true)
             {
-                Console.WriteLine(i);
+                outputView.PrintMap();
                 i--;
                 Thread.Sleep(1000);
-                if(i == 0)
+                if (i == 0)
                 {
                     i = CountdownSeconds;
                     game.playGameTick();
