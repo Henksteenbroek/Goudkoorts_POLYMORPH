@@ -20,7 +20,7 @@ namespace Goudkoorts.Model
             random = new Random();
         }
 
-        public void PlayGameTick()
+        public void playGameTick()
         {
             if(random.Next(1, 5) == 1)
             {

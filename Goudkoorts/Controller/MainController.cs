@@ -36,7 +36,7 @@ namespace Goudkoorts.Controller
                 if(i == 0)
                 {
                     i = CountdownSeconds;
-                    game.PlayGameTick();
+                    game.playGameTick();
                 }
             }
         }

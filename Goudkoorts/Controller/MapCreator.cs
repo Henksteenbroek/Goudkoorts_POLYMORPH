@@ -1,5 +1,6 @@
 ﻿using Goudkoorts.Model;
 using Goudkoorts.Model.Fields;
+using System;
 
 namespace Goudkoorts.Controller
 {
@@ -18,7 +19,7 @@ namespace Goudkoorts.Controller
         public Field[,] CreateArray()
         {
             Field[,] temp;
-            
+
             Warehouse WarehouseA = new Warehouse(Direction.RIGHT);
             game.WarehouseA = WarehouseA;
             Warehouse WarehouseB = new Warehouse(Direction.RIGHT);
@@ -47,29 +48,44 @@ namespace Goudkoorts.Controller
         {
             for (int x = 0; x < temp.GetLength(0); x++)
             {
-                for (int y = 0; x < temp.GetLength(1); y++)
+                for (int y = 0; y < temp.GetLength(1); y++)
                 {
-                    switch (temp[x, y].Direction)
+                    if (temp[x, y] != null)
                     {
-                        case Direction.UP:
-                            temp[x, y].Next = temp[x, y - 1];
-                            break;
-                        case Direction.DOWN:
-                            temp[x, y].Next = temp[x, y + 1];
-                            break;
-                        case Direction.LEFT:
-                            temp[x, y].Next = temp[x-1, y];
-                            break;
-                        case Direction.RIGHT:
-                            temp[x, y].Next = temp[x + 1, y];
-                            break;
-                        case Direction.SPLIT:
-                            temp[x, y].NextUp = temp[x - 1, y];
-                            temp[x, y].NextDown = temp[x - 1, y];
-                            temp[x, y].Next = temp[x, y].NextUp;
-                            break;
+                        switch (temp[x, y].Direction)
+                        {
+                            case Direction.UP:
+                                if (y != 0)
+                                {
+                                    temp[x, y].Next = temp[x, y - 1];
+                                }
+                                break;
+                            case Direction.DOWN:
+                                if (y + 1 < temp.GetLength(1))
+                                {
+                                    temp[x, y].Next = temp[x, y + 1];
+                                }
+                                break;
+                            case Direction.LEFT:
+                                if (x != 0)
+                                {
+                                    temp[x, y].Next = temp[x - 1, y];
+                                }
+                                break;
+                            case Direction.RIGHT:
+                                if (x + 1 < temp.GetLength(0))
+                                {
+                                    temp[x, y].Next = temp[x + 1, y];
+                                }
+                                break;
+                            case Direction.SPLIT:
+                                temp[x, y].NextUp = temp[x - 1, y];
+                                temp[x, y].NextDown = temp[x - 1, y];
+                                temp[x, y].Next = temp[x, y].NextUp;
+                                break;
+                        }
                     }
-                    
+
                 }
             }
         }
