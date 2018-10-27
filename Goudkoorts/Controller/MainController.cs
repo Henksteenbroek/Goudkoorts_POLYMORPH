@@ -27,10 +27,11 @@ namespace Goudkoorts.Controller
         private void test()
         {
             int i = 0;
-            while (true)
+            while (i != 100000)
             {
                 Console.WriteLine(i++);
             }
+            Console.ReadLine();
         }
     }
 }
