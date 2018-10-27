@@ -12,7 +12,7 @@ namespace Goudkoorts.Controller
     public class MainController
     {
         private Game game;
-        private Thread MyNewAwesomeThread;
+        private Thread CountDownThread;
 
         public MainController()
         {
@@ -20,13 +20,23 @@ namespace Goudkoorts.Controller
             new MapCreator(game);
             new InputView();
             new OutputView(game);
-            MyNewAwesomeThread = new Thread(test);
-            MyNewAwesomeThread.Start();
+            CountDownThread = new Thread(CountDown);
+            CountDownThread.Start();
         }
 
-        private void test()
+        private void CountDown()
         {
-           
+            int i = 5;
+            while (true)
+            {
+                Console.WriteLine(i);
+                i--;
+                Thread.Sleep(1000);
+                if(i == 0)
+                {
+                    i = 5;
+                }
+            }
         }
     }
 }
