@@ -10,7 +10,6 @@ namespace Goudkoorts.Model
     public class Ship : GameObject
     {
         public int Capacity = 8;
-        public int Cargo { get; set; }
         public bool IsDocked { get; set; }
         
        

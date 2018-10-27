@@ -10,10 +10,10 @@ namespace Goudkoorts.Model
 {
     public class Cart : GameObject
     {
-        public int Cargo = 1;
         public Cart()
         {
             DrawChar = 'O';
+            Cargo = 1;
         }
     }
 }
