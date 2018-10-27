@@ -13,18 +13,23 @@ namespace Goudkoorts.Model
         public Warehouse WarehouseA { get; set; }
         public Warehouse WarehouseB { get; set; }
         public Warehouse WarehouseC { get; set; }
+        public List<Cart> carts { get; set; }
         public Cart Cart { get; set; }
         Random random;
         
         public Game()
         {
+            carts = new List<Cart>();
             random = new Random();
-            Cart = new Cart();
+            //Cart = new Cart();
         }
 
         public void playGameTick()
         {
-            Cart.move();
+            foreach(var item in carts)
+            {
+                item.move();
+            }
             if(random.Next(1, 5) == 1)
             {
                 generateCart();
@@ -36,13 +41,13 @@ namespace Goudkoorts.Model
             switch (random.Next(1, 4))
             {
                 case 1:
-                    WarehouseA.generateCart();
+                    carts.Add(WarehouseA.generateCart());
                     break;
                 case 2:
-                    WarehouseB.generateCart();
+                    carts.Add(WarehouseB.generateCart());
                     break;
                 case 3:
-                    WarehouseC.generateCart();
+                    carts.Add(WarehouseC.generateCart());
                     break;
             }
         }
