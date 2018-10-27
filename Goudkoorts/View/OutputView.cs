@@ -16,9 +16,10 @@ namespace Goudkoorts.View
             this.game = game;
         }
 
-        public void PrintMap()
+        public void PrintMap(int countdown)
         {
             Console.Clear();
+            Console.WriteLine(countdown);
             for (int x = 0; x < game.MapArray.GetLength(0); x++)
             {
                 for (int y = 0; y < game.MapArray.GetLength(1); y++)

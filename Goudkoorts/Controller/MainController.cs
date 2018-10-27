@@ -22,7 +22,6 @@ namespace Goudkoorts.Controller
             new MapCreator(game);
             new InputView();
             outputView = new OutputView(game);
-            outputView.PrintMap();
             CountDownThread = new Thread(CountDown);
             CountDownThread.Start();
             Console.ReadLine();
@@ -33,7 +32,7 @@ namespace Goudkoorts.Controller
             int i = CountdownSeconds;
             while (true)
             {
-                outputView.PrintMap();
+                outputView.PrintMap(i);
                 i--;
                 Thread.Sleep(1000);
                 if (i == 0)
